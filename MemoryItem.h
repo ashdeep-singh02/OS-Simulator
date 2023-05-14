@@ -2,6 +2,7 @@
 #define MEMORY_ITEM_
 
 #include <iostream>
+#include <vector>
 
 
 struct MemoryItem{
