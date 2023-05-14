@@ -26,6 +26,7 @@ public:
     bool NewChildProcess(int priority, unsigned long long size);
     void TerminateChildren(Process parentProcess);
     bool AllocateNewProcessInRam(int priority, unsigned long long size);
+    void DeleteRunningProcess();
 
 private:
     int pid = 0;

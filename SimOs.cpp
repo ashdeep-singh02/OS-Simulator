@@ -215,7 +215,7 @@ void SimOS::SimExit(){
         }
     }
     TerminateChildren(currentlyRunningProcess);
-    NextProcessUp();
+    DeleteRunningProcess();
     return;
 }
 
@@ -302,7 +302,7 @@ std::queue<FileReadRequest> SimOS::GetDiskQueue(int diskNumber){
     return ans;
 }
 
-void SimOS::NextProcessUp(){
+void SimOS::DeleteRunningProcess(){
     int index = 0;
     bool processToBeDeletedFound = false;
     while((index < RAM.size()) && (!processToBeDeletedFound)){
@@ -324,3 +324,4 @@ void SimOS::NextProcessUp(){
         readyQueue.erase(readyQueue.begin()); //remove from RQ
     }
 }
+
