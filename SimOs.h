@@ -22,11 +22,11 @@ public:
     MemoryUsage GetMemory();
     FileReadRequest GetDisk(int diskNumber);
     std::queue<FileReadRequest> GetDiskQueue(int diskNumber);
-    void NextProcessUp();
     bool NewChildProcess(int priority, unsigned long long size);
     void TerminateChildren(Process parentProcess);
     bool AllocateNewProcessInRam(int priority, unsigned long long size);
     void DeleteRunningProcess();
+    void NextProcessUp();
 
 private:
     int pid = 0;

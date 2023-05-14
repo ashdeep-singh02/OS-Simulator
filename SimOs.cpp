@@ -221,30 +221,12 @@ void SimOS::SimExit(){
 
 void SimOS::SimWait(){
     waitingProcesses.push_back(currentlyRunningProcess);
-    if(readyQueue.size() == 0){
-        Process NoRunningProcess{0,0,0};
-        currentlyRunningProcess = NoRunningProcess;
-        currentlyRunningProcessPID = 0;
-    }
-    else{
-        currentlyRunningProcess = readyQueue[0];
-        currentlyRunningProcessPID = readyQueue[0].processPid;
-        readyQueue.erase(readyQueue.begin()); //remove from RQ
-    }
+    NextProcessUp();
 }
  
 void SimOS::DiskReadRequest(int diskNumber, std::string fileName){
     HardDisks[diskNumber].NewProcessRequestingDiskRead(currentlyRunningProcess, fileName);
-    if(readyQueue.size() == 0){
-        Process NoRunningProcess{0,0,0};
-        currentlyRunningProcess = NoRunningProcess;
-        currentlyRunningProcessPID = 0;
-    }
-    else{
-        currentlyRunningProcess = readyQueue[0];
-        currentlyRunningProcessPID = readyQueue[0].processPid;
-        readyQueue.erase(readyQueue.begin()); //remove from RQ
-    }
+    NextProcessUp();
 }
 
 void SimOS::DiskJobCompleted(int diskNumber)
@@ -313,6 +295,10 @@ void SimOS::DeleteRunningProcess(){
         }
         index++;
     }
+    NextProcessUp();
+}
+
+void SimOS::NextProcessUp(){
     if(readyQueue.size() == 0){
         Process NoRunningProcess{0,0,0};
         currentlyRunningProcess = NoRunningProcess;
@@ -324,4 +310,3 @@ void SimOS::DeleteRunningProcess(){
         readyQueue.erase(readyQueue.begin()); //remove from RQ
     }
 }
-
