@@ -1,4 +1,4 @@
-# OS-Simulator
+# Operating System Simulator
 Ashdeep Singh
 
 Final Project for CSCI 34000- Operating Systems
