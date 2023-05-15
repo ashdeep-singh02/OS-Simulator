@@ -66,4 +66,6 @@ If instruction is called that requires a running process, but the CPU is idle, j
  
  ## Running Program
  Compile code using: `g++ -std=c++17 *.cpp -o runme`
+ 
+ Run program using: `./runme`
 
