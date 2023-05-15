@@ -1,4 +1,7 @@
 # OS-Simulator
+Ashdeep Singh
+Final Project for CSCI 34000- Operating Systems
+
 `OS_Sim_Project_Instruction_Annotations` and `OS_Sim_Project_ThoughtProcess` are PDF files highlighting personal notes/drawings/thoughts/revisions made while coding this project :).
 
 ## Background Information
