@@ -1,6 +1,4 @@
 # OS-Simulator
-Compile code using: `g++ -std=c++17 *.cpp -o runme`
-
 `OS_Sim_Project_Instruction_Annotations` and `OS_Sim_Project_ThoughtProcess` are PDF files highlighting personal notes/drawings/thoughts/revisions made while coding this project :).
 
 ## Background Information
@@ -65,3 +63,7 @@ GetDiskQueue returns the I/O-queue of the specified disk starting from the “ne
 If a disk with the requested number doesn’t exist, just ignore the instruction, and output a message that the instruction was ignored.
  
 If instruction is called that requires a running process, but the CPU is idle, just ignore the instruction, and output a message that the instruction was ignored.
+ 
+ ## Running Program
+ Compile code using: `g++ -std=c++17 *.cpp -o runme`
+
