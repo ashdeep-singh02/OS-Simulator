@@ -36,7 +36,8 @@ The process wants to pause and wait for any of its child processes to terminate.
 
 - void DiskReadRequest( int diskNumber, std::string fileName )
 Currently running process requests to read the specified file from the disk with a given number. The process issuing disk reading requests immediately stops using the CPU, even if the ready-queue is empty.
-void DiskJobCompleted( int diskNumber )
+
+- void DiskJobCompleted( int diskNumber )
 A disk with a specified number reports that a single job is completed. The served process should return to the ready-queue or immediately start using the CPU (depending on the priority).
 
 - int GetCPU( )
